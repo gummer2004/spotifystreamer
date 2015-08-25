@@ -1,0 +1,106 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ca.thebyrnefamily.spotifystreamer.PlayerFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout android:layout_height="match_parent" android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/artist_name"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:id="@+id/artistName"
+            android:paddingTop="10dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/album_name"
+            android:gravity="center_horizontal"
+            android:id="@+id/albumName"
+            android:paddingTop="10dp" />
+        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/album_name"
+            android:layout_gravity="center"
+            android:id="@+id/albumImage"
+            android:layout_weight="10">
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/track_name"
+            android:id="@+id/trackName"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nowPlaying"
+            android:max="30"
+            android:layout_margin="5dp"
+            android:paddingTop="10dp" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/minSeekValue"
+                android:text="@string/start_space"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/maxSeekValue"
+                android:text="@string/end_space"
+                android:layout_alignParentRight="true"
+                android:paddingRight="10dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/previousBtn"
+                android:src="@mipmap/ic_media_previous"
+                android:contentDescription="@string/media_previous" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/playBtn"
+                android:src="@mipmap/ic_media_play"
+                android:contentDescription="@string/media_play" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pauseBtn"
+                android:src="@mipmap/ic_media_pause"
+                android:contentDescription="@string/media_pause" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nextBtn"
+                android:src="@mipmap/ic_media_next"
+                android:contentDescription="@string/media_next" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
+

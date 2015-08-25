@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -48,7 +49,7 @@ public class TopTracksFragment extends Fragment {
 
         }
         if(savedInstanceState==null || !savedInstanceState.containsKey("artist")){
-            ;
+
         }else{
             artistName = savedInstanceState.getString("artist");
         }
@@ -79,6 +80,17 @@ public class TopTracksFragment extends Fragment {
         ((TopTracks) getActivity()).getSupportActionBar().setTitle("Top Ten Tracks");
         ((TopTracks) getActivity()).getSupportActionBar().setSubtitle(artistName);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
+
+                Intent intent = new Intent(getActivity(), Player.class);
+                intent.putParcelableArrayListExtra("MyTracks",trackList);
+                intent.putExtra(Intent.EXTRA_TEXT, position);
+                startActivity(intent);
+            }
+        });
+
         return rootView;
     }
 
@@ -93,8 +105,8 @@ public class TopTracksFragment extends Fragment {
                 mTrackAdapter.clear();
                 for (Track myTrack :result){
                     try{
-                        if (myTrack.album.images.size()>0){
-                            myImage = myTrack.album.images.get(myTrack.album.images.size()-1).url;
+                        if (myTrack.album.images.size()>1){
+                            myImage = myTrack.album.images.get(myTrack.album.images.size()-2).url;
                         }else{
                             myImage = "http://placehold.it/200x200?text=no+Image";
                         }

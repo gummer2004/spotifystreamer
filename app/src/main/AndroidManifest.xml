@@ -26,6 +26,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ca.thebyrnefamily.spotifystreamer.MainActivity" />
         </activity>
+        <activity
+            android:name=".Player"
+            android:label="@string/title_activity_player"
+            android:parentActivityName=".TopTracks" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ca.thebyrnefamily.spotifystreamer.TopTracks" />
+        </activity>
+        <service
+            android:name=".Service.MediaPlayerService"
+            android:enabled ="true"
+            android:exported = "true">
+        </service>
     </application>
 
 </manifest>

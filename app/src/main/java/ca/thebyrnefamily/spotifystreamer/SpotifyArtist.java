@@ -36,7 +36,7 @@ public class SpotifyArtist implements Parcelable {
         dest.writeString(url);
     }
 
-    public final Parcelable.Creator<SpotifyArtist> CREATOR = new Parcelable.Creator<SpotifyArtist>(){
+    public static final Parcelable.Creator<SpotifyArtist> CREATOR = new Parcelable.Creator<SpotifyArtist>(){
         @Override
         public SpotifyArtist createFromParcel(Parcel source) {
             return new SpotifyArtist(source);

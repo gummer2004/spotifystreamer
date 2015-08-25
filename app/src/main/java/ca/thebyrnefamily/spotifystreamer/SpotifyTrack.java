@@ -44,7 +44,7 @@ public class SpotifyTrack implements Parcelable{
         dest.writeString(image);
         dest.writeString(preview);
     }
-    public final Parcelable.Creator<SpotifyTrack> CREATOR = new Parcelable.Creator<SpotifyTrack>(){
+    public static final Parcelable.Creator<SpotifyTrack> CREATOR = new Parcelable.Creator<SpotifyTrack>(){
         @Override
         public SpotifyTrack createFromParcel(Parcel source) {
             return new SpotifyTrack(source);
